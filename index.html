@@ -6,13 +6,21 @@
   <link rel="stylesheet" href="src/css/main.css">
 </head>
 <body>
-  <header>
-    <div>
+  <header class="flex space-between">
+    <div class="flex burger-logo">
       <nav>
-        <a></a>
+        <svg width="17" height="17">
+          <rect width="17" height="2.5" fill="#223440"></rect>
+          <rect width="17" height="2.5" y="6" fill="#223440"></rect>
+          <rect width="17" height="2.5" y="12" fill="#223440"></rect>
+        </svg>
       </nav>
-      <div>BANIERA</div>
+      <div>
+        <p class="logo">BANIERA</p>
+        <p class="slogan">Groupe Art & Styles, spécialiste salle de bain depuis 1974</p>
+      </div>
     </div>
+
     <form class="search-bar flex">
       <label for="search"></label>
       <input id="search" type="search" name="search-bar">
@@ -25,7 +33,34 @@
         </svg>
       </button>
     </form>
-    <div></div>
+    <div class="header-icones flex">
+      <div>
+        <svg xmlns="http://www.w3.org/2000/svg" width="19.169" height="25.968">
+          <g data-name="pin icone" transform="translate(.75 .75)" fill="none" stroke="#223440" stroke-miterlimit="10" stroke-width="1.5">
+            <path data-name="Tracé 22" d="M17.669 7.786C17.669 3.211 13.714 0 8.834 0S0 3.3 0 7.786c0 9.249 8.4 16.47 8.4 16.47a.549.549 0 00.867 0s8.402-6.831 8.402-16.47z"/>
+            <circle data-name="Ellipse 4" cx="4.604" cy="4.604" r="4.604" transform="translate(4.231 4.019)"/>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24.5" height="25.116">
+          <g data-name="connect icone" transform="translate(.75 .75)" fill="none" stroke="#223440" stroke-miterlimit="10" stroke-width="1.5">
+            <circle data-name="Ellipse 2" cx="6.433" cy="6.433" r="6.433" transform="translate(5.067)"/>
+            <path data-name="Tracé 20" d="M23 24.366a11.5 11.5 0 00-23 0"/>
+          </g>
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="27.315" height="24.772">
+          <path data-name="heart icone" d="M24.481 2.871a7.091 7.091 0 00-10.029 0h0l-.774.773-.773-.773A7.097 7.097 0 002.781 12.82l.083.084.774.774h0l10.043 10.034h0L23.716 13.68h0l.773-.774a7.093 7.093 0 000-10.03z" fill="none" stroke="#223440" stroke-miterlimit="10" stroke-width="1.5"/>
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="27.097" height="24.167">
+          <g data-name="basket icone" fill="none" stroke="#223440" stroke-miterlimit="10" stroke-width="1.5">
+            <path data-name="Tracé 16" d="M20.326 23.416H6.773c-1.382 0-2.637-1.275-3.213-3.266L.773 10.534c-.078-.271.047-.582.235-.582h25.074c.188 0 .313.31.235.582l-2.778 9.608c-.573 1.997-1.83 3.274-3.213 3.274z"/>
+            <path data-name="Tracé 17" d="M12.934 1.134L6.373 9.957h14.354l-6.566-8.823a.777.777 0 00-1.089-.139.789.789 0 00-.138.139z"/>
+          </g>
+        </svg>
+
+      </div>
+    </div>
   </header>
 
 

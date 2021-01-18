@@ -19,9 +19,54 @@
 body{
   padding: 0;
   margin: 0;
+  font-family: "quicksand";
+  color: #223440;
 }
 
 .flex{
   display: flex;
 }
+
+.space-between{
+  justify-content: space-between;
+}
+
+/*--------------- HEADER */
+
+header{
+  padding: 10px 20px;
+  flex-wrap: wrap;
+}
+
+.search-bar{
+  width: 100%;
+  order: 3;
+}
+
+.search-bar label{
+  position: absolute;
+}
+
+.search-bar input{
+  width: 80%;
+  height: 32px;
+}
+
+.search-bar button{
+  width: 20%;
+  height: 32px;
+}
+
+.header-icones{
+  order: 2;
+}
+
+.logo{
+  margin: 0;
+}
+
+.slogan{
+  display: none;
+}
+/*---------------- 1st section - full-hero */
 
