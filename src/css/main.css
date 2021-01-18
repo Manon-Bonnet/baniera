@@ -132,3 +132,17 @@ h1{
 section:nth-child(2){
   text-align: center;
 }
+
+/*---------------- Votre projet Button */
+
+.votre-projet-btn{
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  border: 0;
+  background-color: var(--dark-blue);
+  color: white;
+  font-family: "barlow-regular";
+  font-size: 16px;
+  height: 65px;
+}
