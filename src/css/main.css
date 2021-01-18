@@ -1,14 +1,18 @@
 /*--------------- FONTS */
 
 @font-face{
-  font-family: "barlow";
-  src: url("/src/fonts/Barlow/BarlowSemiCondensed-Medium.ttf"),
-  url("/src/fonts/Barlow/BarlowSemiCondensed-Regular.ttf");
+  font-family: "barlow-regular";
+  src: url("../fonts/Barlow/BarlowSemiCondensed-Regular.ttf");
+}
+
+@font-face{
+  font-family: "barlow-medium";
+  src: url("../fonts/Barlow/BarlowSemiCondensed-Medium.ttf");
 }
 
 @font-face{
   font-family: "quicksand";
-  src: url("/src/fonts/Quicksand/Quicksand-Regular.ttf");
+  src: url("../fonts/Quicksand/Quicksand-Regular.ttf");
 }
 
 /*--------------- GENERAL */
@@ -29,6 +33,24 @@ body{
 
 .space-between{
   justify-content: space-between;
+}
+
+.flex-column{
+  flex-direction: column;
+}
+
+.full-height{
+  height: 100%;
+}
+
+.main-button{
+  background-color: #f08077;
+  color: white;
+  font-family: "barlow-regular";
+  width: 200px;
+  font-size: 16px;
+  margin: auto auto 0;
+  padding: 17px;
 }
 
 /*--------------- HEADER */
@@ -70,3 +92,18 @@ header{
 }
 /*---------------- 1st section - full-hero */
 
+.full-hero{
+  background-image: linear-gradient(rgba(0, 0, 0, .5), transparent 70%, rgba(0, 0, 0, .5)), url("../images/keeping-your-teeth-good-condition.jpg");
+  background-size: cover;
+  background-position-x: 70%;
+  height: 60vh;
+  padding: 20px;
+  text-align: center;
+  color: white;
+}
+
+h1{
+  margin: 0;
+  font-family: "barlow-medium";
+  font-size: 25px;
+}
