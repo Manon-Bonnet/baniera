@@ -21,10 +21,12 @@
 }
 
 body{
+  --dark-blue: #223440;
   padding: 0;
   margin: 0;
   font-family: "quicksand";
-  color: #223440;
+  font-size: 15px;
+  color: var(--dark-blue);
 }
 
 .flex{
@@ -53,6 +55,10 @@ body{
   padding: 17px;
 }
 
+section{
+  padding: 20px;
+}
+
 /*--------------- HEADER */
 
 header{
@@ -70,12 +76,12 @@ header{
 }
 
 .search-bar input{
-  width: 80%;
+  width: 90%;
   height: 32px;
 }
 
 .search-bar button{
-  width: 20%;
+  width: 10%;
   height: 32px;
 }
 
@@ -85,11 +91,24 @@ header{
 
 .logo{
   margin: 0;
+  font-family: "barlow-regular";
+  margin-left: 10px;
+  vertical-align: center;
 }
 
 .slogan{
   display: none;
 }
+
+input[type="search"]{
+  border: 1px solid var(--dark-blue);
+}
+
+.search-submit{
+  background-color: var(--dark-blue);
+  border: 1px solid var(--dark-blue);
+}
+
 /*---------------- 1st section - full-hero */
 
 .full-hero{
@@ -97,7 +116,6 @@ header{
   background-size: cover;
   background-position-x: 70%;
   height: 60vh;
-  padding: 20px;
   text-align: center;
   color: white;
 }
@@ -105,5 +123,12 @@ header{
 h1{
   margin: 0;
   font-family: "barlow-medium";
-  font-size: 25px;
+  font-size: 20px;
+  text-align: center;
+}
+
+/*---------------- 2nd section - Baniera intro */
+
+section:nth-child(2){
+  text-align: center;
 }
