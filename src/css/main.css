@@ -67,6 +67,7 @@ section{
 header{
   padding: 10px 20px;
   flex-wrap: wrap;
+  z-index: 4;
 }
 
 .search-bar{
@@ -112,6 +113,113 @@ input[type="search"]{
   border: 1px solid var(--dark-blue);
 }
 
+/*---------------- Burger Menu */
+
+.main-menu{
+  position: fixed;
+  left: -100vw;
+  top: 0;
+  height: 100%;
+  width: 100vw;
+  background-color: var(--dark-blue);
+  color: white;
+  margin: 0;
+  padding-top: 20px;
+  text-align: center;
+}
+
+.main-menu > li {
+  margin-top: 20px;
+}
+
+.burger-icone{
+  position: relative;
+  z-index: 2;
+}
+
+.close-burger-icone{
+  position: fixed;
+}
+
+.close-burger-icone rect:nth-child(1){
+  transform: rotate(-45deg);
+  fill: white;
+}
+
+.close-burger-icone rect:nth-child(2){
+  display: none;
+}
+
+.close-burger-icone rect:nth-child(3){
+  transform: rotate(45deg);
+  fill: white;
+}
+
+.arrow-burger-icone rect:nth-child(3){
+  transform: rotate(45deg);
+  fill: white;
+}
+
+.arrow-burger-icone rect:nth-child(2){
+  fill: white;
+}
+
+.arrow-burger-icone rect:nth-child(1){
+  transform: rotate(-45deg);
+  fill: white;
+}
+
+.second-menu{
+  position: fixed;
+  left: -100vw;
+  top: 0;
+  height: 100%;
+  width: 100vw;
+  background-color: var(--dark-blue);
+  color: white;
+  margin: 0;
+  padding-top: 20px;
+  text-align: center;
+}
+
+.open-second-menu ~ ul{
+  animation: menuappearance 1s;
+  animation-fill-mode: forwards;
+}
+
+.close-second-menu ~ ul{
+  animation: menudisappearance 1s;
+  animation-fill-mode: forwards;
+}
+
+.open-menu{
+  animation: menuappearance 1s;
+  animation-fill-mode: forwards;
+}
+
+.close-menu{
+  animation: menudisappearance 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes menuappearance{
+  0%{
+    left: -100vw;
+  }
+  100%{
+    left: 0;
+  }
+}
+
+@keyframes menudisappearance{
+  0%{
+    left: 0;
+  }
+  100%{
+    left: -100vw;
+  }
+}
+
 /*---------------- 1st section - full-hero */
 
 .full-hero{
@@ -151,17 +259,11 @@ section:nth-child(3){
   font-family: "barlow-regular";
   font-size: 16px;
   height: 65px;
-  z-index: 0;
-}
-
-main{
-  z-index: 1;
 }
 
 /*---------------- Footer */
 
 footer{
-  z-index: 1;
   background-color: var(--dark-blue);
   color: white;
   padding: 20px;
