@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+  <g id="instagram_icone" data-name="instagram icone" transform="translate(0 0)">
+    <ellipse id="Ellipse_65" data-name="Ellipse 65" cx="20" cy="20" rx="20" ry="20" transform="translate(0 0)" fill="#efefee"/>
+    <path id="Tracé_104" data-name="Tracé 104" d="M135.905,41.146H124.032A5.936,5.936,0,0,1,118.1,35.21V23.337a5.936,5.936,0,0,1,5.936-5.936h11.873a5.936,5.936,0,0,1,5.936,5.936V35.21A5.936,5.936,0,0,1,135.905,41.146ZM124.032,19.775a3.565,3.565,0,0,0-3.561,3.562V35.21a3.566,3.566,0,0,0,3.561,3.562h11.873a3.565,3.565,0,0,0,3.561-3.562V23.337a3.564,3.564,0,0,0-3.561-3.562Z" transform="translate(-109.805 -9.383)" fill="#223440"/>
+    <path id="Tracé_105" data-name="Tracé 105" d="M127.689,33.482a6.489,6.489,0,1,1,6.488-6.49h0A6.492,6.492,0,0,1,127.689,33.482Zm0-10.688a4.2,4.2,0,1,0,4.2,4.2A4.2,4.2,0,0,0,127.689,22.794Z" transform="translate(-107.519 -7.106)" fill="#223440"/>
+    <ellipse id="Ellipse_66" data-name="Ellipse 66" cx="1.145" cy="1.145" rx="1.145" ry="1.145" transform="translate(25.659 12.496)" fill="#223440"/>
+  </g>
+</svg>
