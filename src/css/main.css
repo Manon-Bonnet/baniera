@@ -36,15 +36,11 @@ body{
   display: flex;
 }
 
-.space-between{
-  justify-content: space-between;
-}
-
 .flex-column{
   flex-direction: column;
 }
 
-.full-height{
+.full-hero-content{
   height: 100%;
 }
 
@@ -213,6 +209,7 @@ input[type="search"]{
   text-align: center;
   color: white;
   padding: 20px;
+  justify-content: space-between;
 }
 
 .full-hero .main-button{
@@ -415,6 +412,10 @@ ul{
 
 @media screen and (min-width: 768px){
 
+  .main-button{
+    font-size: 20px;
+  }
+
   /* Header */
 
   .search-bar{
@@ -447,6 +448,38 @@ ul{
     order: 3;
   }
 
+  /* Full hero */
+
+  .full-hero{
+    --full-hero-height: 70vh;
+    background-image: url("../images/keeping-your-teeth-good-condition.jpg");
+    height: var(--full-hero-height);
+  }
+
+  .full-hero-content{
+    height: calc(var(--full-hero-height)/2);
+    min-height: fit-content;
+    min-width: 30%;
+    max-width: 400px;
+    padding: 20px;
+    margin: calc(var(--full-hero-height)/4) 10%;
+    background-color: var(--light-grey);
+    color: var(--dark-blue);
+    justify-content: space-evenly;
+  }
+
+  .full-hero-content h1{
+    font-size: 30px;
+  }
+
+  .full-hero .main-button{
+    margin: 0 auto;
+  }
+
+  .chapo{
+    font-size: 18px;
+  }
+
 }
 
 @media screen and (min-width: 900px){
@@ -460,6 +493,10 @@ ul{
   .second-menu{
     max-width: 400px;
     width: 30%;
+  }
+
+  .chapo{
+    padding: 0 40px;
   }
 }
 
