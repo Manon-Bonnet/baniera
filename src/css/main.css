@@ -92,11 +92,17 @@ header{
   margin: 0;
   font-family: "barlow-regular";
   margin-left: 10px;
-  vertical-align: center;
+}
+
+.burger-logo{
+  width: 50%;
 }
 
 .slogan{
+  font-size: 12px;
   display: none;
+  margin: 0;
+  margin-left: 10px;
 }
 
 input[type="search"]{
@@ -357,4 +363,72 @@ footer{
 ul{
   list-style: none;
   padding: 0;
+}
+
+@media screen and (min-width: 500px){
+
+  /* Header */
+
+  .search-bar{
+    width: 50%;
+    order: 2;
+  }
+
+  .burger-logo{
+    width: 20%;
+  }
+
+  .header-icones{
+    width: 30%;
+  }
+
+  .main-icones{
+    width: 50%;
+    max-width: 100px;
+    justify-content: space-between;
+  }
+
+  .pin-icone{
+    width: 50%;
+    justify-content: center;
+  }
+  
+  .header-icones{
+    order: 3;
+  }
+}
+
+@media screen and (min-width: 768px){
+
+  /* Header */
+
+  .search-bar{
+    width: 30%;
+    order: 2;
+  }
+
+  .burger-logo{
+    width: 50%;
+  }
+
+  .slogan{
+    display: block;
+  }
+
+  .header-icones{
+    width: 20%;
+  }
+
+  .main-icones{
+    width: 50%;
+  }
+
+  .pin-icone{
+    width: 50%;
+    justify-content: center;
+  }
+  
+  .header-icones{
+    order: 3;
+  }
 }
