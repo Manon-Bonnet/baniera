@@ -261,8 +261,9 @@ section:nth-child(3){
 
 .votre-projet-btn{
   position: fixed;
+  padding: 0;
   bottom: 0;
-  width: 100vw;
+  width: 100%;
   border: 0;
   background-color: var(--dark-blue);
   color: white;
@@ -387,6 +388,15 @@ ul{
 
   .second-menu{
     width: 50vw;
+  }
+
+  /* Votre projet button */
+
+  .votre-projet-btn{
+    bottom: 20px;
+    right: 20px;
+    width: 200px;
+    font-size: 16px;
   }
 
 }
