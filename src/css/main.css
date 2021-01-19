@@ -1,5 +1,7 @@
 /*--------------- FONTS */
 
+/* récupérer les fonts dans font squirel les formats woff c'est mieux ! 
+https://www.fontsquirrel.com/tools/webfont-generator */
 @font-face{
   font-family: "barlow-regular";
   src: url("../fonts/Barlow/BarlowSemiCondensed-Regular.ttf");
@@ -21,6 +23,7 @@
 }
 
 body{
+  --light-grey: #f2f2f2;
   --dark-blue: #223440;
   padding: 0;
   margin: 0;
@@ -120,16 +123,19 @@ input[type="search"]{
   color: white;
 }
 
-h1{
+h1, h4{
   margin: 0;
   font-family: "barlow-medium";
   font-size: 20px;
+}
+
+h1{
   text-align: center;
 }
 
 /*---------------- 2nd section - Baniera intro */
 
-section:nth-child(2){
+section:nth-child(3){
   text-align: center;
 }
 
@@ -145,4 +151,86 @@ section:nth-child(2){
   font-family: "barlow-regular";
   font-size: 16px;
   height: 65px;
+  z-index: 0;
+}
+
+main{
+  z-index: 1;
+}
+
+/*---------------- Footer */
+
+footer{
+  z-index: 1;
+  background-color: var(--dark-blue);
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.footer-main-content, .social-medias, .logo-footer{
+  margin-bottom: 30px;
+}
+
+.newsletter-form{
+  width: 100%;
+  position: relative;
+  height: 55px;
+  margin-bottom: 50px;
+}
+
+.newsletter-form label{
+  position: absolute;
+  color: var(--light-grey);
+  left: 10px;
+  top: 20px
+}
+
+.newsletter-form input, .newsletter-form button{
+  height: 55px;
+  background-color: var(--dark-blue);
+  outline: none;
+  border-top: 1px solid var(--light-grey);
+  border-bottom: 1px solid var(--light-grey);
+}
+
+.newsletter-form input{
+  width: 90%;
+  border-left: 1px solid var(--light-grey);
+  border-right: 0;
+}
+
+.newsletter-form button{
+  width: 10%;
+  border-right: 1px solid var(--light-grey);
+  border-left: 0;
+  color: white;
+}
+
+.accordion{
+  border: 1px solid var(--light-grey);
+  min-height: 65px;
+  margin: 10px 0;
+}
+
+.accordion ul{
+  display: none;
+}
+
+.accordion div{
+  position: relative;
+  height: 65px;
+  align-items: center;
+  justify-content: center;
+}
+
+.accordion > div > svg{
+  position: absolute;
+  right: 10px;
+  top: 12px;
+}
+
+ul{
+  list-style: none;
+  padding: 0;
 }
