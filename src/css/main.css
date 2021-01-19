@@ -54,12 +54,7 @@ body{
   font-family: "barlow-regular";
   width: 200px;
   font-size: 16px;
-  margin: auto auto 0;
   padding: 17px;
-}
-
-section{
-  padding: 20px;
 }
 
 /*--------------- HEADER */
@@ -229,6 +224,11 @@ input[type="search"]{
   height: 60vh;
   text-align: center;
   color: white;
+  padding: 20px;
+}
+
+.full-hero .main-button{
+  margin: auto auto 0;
 }
 
 h1, h4{
@@ -245,6 +245,28 @@ h1{
 
 section:nth-child(3){
   text-align: center;
+  padding: 20px;
+}
+
+/*---------------- 4th section - Sur-mesure */
+
+.sur-mesure{
+  background-size: cover;
+  height: 130px;
+}
+
+.sur-mesure-first{
+  background-image: url("../images/sanibell-bv-8c5NfqhcdSw-unsplash.jpg");
+}
+
+.sur-mesure-second{
+  background-image: url("../images/sanibell-bv-77ye1hKRpO0-unsplash.jpg");
+}
+
+.sur-mesure-third{
+  background-image: url("../images/sanibell-bv-lED9KZIpm_w-unsplash.jpg");
+  align-items: center;
+  justify-content: center;
 }
 
 /*---------------- Votre projet Button */
