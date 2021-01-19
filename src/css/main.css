@@ -231,12 +231,12 @@ h1{
 
 /*---------------- 2nd section - Baniera intro */
 
-section:nth-child(3){
+section:nth-child(4){
   text-align: center;
   padding: 20px;
 }
 
-/*---------------- 4th section - Sur-mesure */
+/*---------------- 5th section - Sur-mesure */
 
 .sur-mesure{
   background-size: cover;
