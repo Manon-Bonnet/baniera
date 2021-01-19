@@ -121,7 +121,7 @@ input[type="search"]{
   left: -100vw;
   top: 0;
   height: 100%;
-  width: 100vw;
+  width: 100%;
   background-color: var(--dark-blue);
   color: white;
   margin: 0;
@@ -175,7 +175,7 @@ input[type="search"]{
   left: -100vw;
   top: 0;
   height: 100%;
-  width: 100vw;
+  width: 100%;
   background-color: var(--dark-blue);
   color: white;
   margin: 0;
@@ -201,24 +201,6 @@ input[type="search"]{
 .close-menu{
   animation: menudisappearance 1s;
   animation-fill-mode: forwards;
-}
-
-@keyframes menuappearance{
-  0%{
-    left: -100vw;
-  }
-  100%{
-    left: 0;
-  }
-}
-
-@keyframes menudisappearance{
-  0%{
-    left: 0;
-  }
-  100%{
-    left: -100vw;
-  }
 }
 
 /*---------------- 1st section - full-hero */
@@ -365,7 +347,7 @@ ul{
   padding: 0;
 }
 
-@media screen and (min-width: 500px){
+@media screen and (min-width:500px){
 
   /* Header */
 
@@ -396,6 +378,17 @@ ul{
   .header-icones{
     order: 3;
   }
+
+  /* Burger Menu */
+
+  .main-menu{
+    width: 50vw;
+  }
+
+  .second-menu{
+    width: 50vw;
+  }
+
 }
 
 @media screen and (min-width: 768px){
@@ -430,5 +423,23 @@ ul{
   
   .header-icones{
     order: 3;
+  }
+}
+
+@keyframes menuappearance{
+  0%{
+    left: -100vw;
+  }
+  100%{
+    left: 0;
+  }
+}
+
+@keyframes menudisappearance{
+  0%{
+    left: 0;
+  }
+  100%{
+    left: -100vw;
   }
 }
