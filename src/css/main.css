@@ -312,6 +312,25 @@ section:nth-child(5){
   padding: 20px;
 }
 
+.slider{
+  width: 100%;
+  overflow: hidden;
+}
+
+.slides{
+  width: fit-content;
+}
+
+.slides img{
+  height: 200px;
+  width: 40vw;
+  object-fit: cover;
+}
+
+.slides article{
+  width: 40vw;
+}
+
 /*---------------- 5th section - Sur-mesure */
 
 .sur-mesure{
