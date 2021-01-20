@@ -1,5 +1,6 @@
-// Burger Menu
+/* ------------------------------ Make the burger menu */
 
+// Get elements
 const burgerMenuIcon = document.getElementsByClassName("burger-icone")[0];
 const mainMenu = document.getElementsByClassName("main-menu")[0];
 const secondMenuTitle = document.getElementsByClassName("second-menu-title");
@@ -16,7 +17,6 @@ for(let i=0 ; i< secondMenuTitle.length ; i++){
 
 
 // functions 
-
 function openBurgerMenu(){
   mainMenu.classList.add("open-menu");
   mainMenu.classList.remove("close-menu");
@@ -82,4 +82,37 @@ function backToBurgerMenu(){
   burgerMenuIcon.classList.remove("arrow-burger-icone");
   burgerMenuIcon.removeEventListener("click", backToBurgerMenu);
   openBurgerMenu();
+}
+
+/*----------------------------- Slider */
+
+//Get elements 
+const rightArrow = document.getElementsByClassName("right-arrow")[0];
+const leftArrow = document.getElementsByClassName("left-arrow")[0];
+const slides = document.getElementsByClassName("slides")[0];
+
+const count = document.querySelector('.slides').children.length;
+let current = 0;
+
+// Listeners
+rightArrow.addEventListener("click", slideToRight);
+leftArrow.addEventListener("click", slideToLeft);
+
+
+
+function slideToRight(){
+  current++;
+  slide();
+}
+
+function slideToLeft(){
+  current--;
+  slide();
+}
+
+function slide(){
+  const transform = -27 * current;
+  slides.style.transform = `translateX(${transform}vw)`;
+  leftArrow.style.display = current === 0 ? "none" : "block";
+  rightArrow.style.display = current === count - 1 ? "none" : "block";
 }

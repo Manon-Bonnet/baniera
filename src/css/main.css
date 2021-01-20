@@ -249,6 +249,7 @@ h1, h4{
 
 h1{
   text-align: center;
+  width: 100%;
 }
 
 /*---------------- 2nd section - Baniera intro */
@@ -309,12 +310,14 @@ figcaption{
 
 section:nth-child(5){
   padding: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .slider{
   width: 100%;
   overflow-x: auto;
-  margin: 20px 0;
+  margin: 20px 10px;
 }
 
 .slides{
@@ -323,14 +326,14 @@ section:nth-child(5){
 }
 
 .slides img{
-  height: 35vw;
+  height: 25vw;
   width: 100%;
   object-fit: cover;
 }
 
 .slides article{
-  width: 35vw;
-  margin-right: 15px;
+  width: 25vw;
+  margin-right: 2vw;
 }
 
 h2{
@@ -340,6 +343,11 @@ h2{
 
 .slides article p{
   margin: 0;
+}
+
+.arrows{
+  display: none;
+  margin: auto 0;
 }
 
 /*---------------- 5th section - Sur-mesure */
@@ -543,9 +551,12 @@ ul{
   
   .slider{
     overflow-x: hidden;
-    width: 80vw;
-    margin: 20px auto;
+    width: 70vw;
     max-width: 1000px;
+  }
+
+  .arrows{
+    display: block;
   }
 
 }
@@ -672,14 +683,15 @@ ul{
     transform: inherit;
   }
 
+  .slider{
+    width: 80vw;
+  }
+
   .slides article{
-    width: 25vw;
     max-width: 250px;
-    margin-right: 15px;
   }
 
   .slides article img{
-    height: 25vw;
     max-height: 250px;
   }
 

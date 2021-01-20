@@ -167,6 +167,15 @@
           </g>
         </g>
       </symbol>
+
+      <!-- Arrows -->
+      <symbol id="right-arrow" viewBox="0 0 21.857 40.174">
+        <path d="M10.8,29.325,28.165,11.961a1.375,1.375,0,0,0,0-1.943l-.386-.386a1.375,1.375,0,0,0-1.943,0L7.466,28l-.32.32-.034.034a1.373,1.373,0,0,0,0,1.943l.379.379L25.8,48.989a1.422,1.422,0,0,0,2.01,0l.32-.322a1.422,1.422,0,0,0,0-2.01Z" transform="translate(28.567 49.405) rotate(180)" fill="#223440"/>
+      </symbol>
+
+      <symbol id="left-arrow" viewBox="0 0 21.857 40.174">
+        <path d="M10.8,29.325,28.165,11.961a1.375,1.375,0,0,0,0-1.943l-.386-.386a1.375,1.375,0,0,0-1.943,0L7.466,28l-.32.32-.034.034a1.373,1.373,0,0,0,0,1.943l.379.379L25.8,48.989a1.422,1.422,0,0,0,2.01,0l.32-.322a1.422,1.422,0,0,0,0-2.01Z" transform="translate(-6.71 -9.23)" fill="#223440"/>
+      </symbol>
       
   </svg>
 
@@ -471,8 +480,11 @@
       </nav>
     </section>
 
-    <section>
+    <section class="flex">
       <h1>Votre sélection</h1>
+      <svg class="arrows" width="25" height="25" viewBox="0 0 20 20">
+        <use xlink:href="#left-arrow" class="left-arrow"></use>
+      </svg>
       <div class="slider">
         <div class="slides flex">
           <article>
@@ -502,6 +514,9 @@
           </article>
         </div>
       </div>
+      <svg class="arrows" width="25" height="25" viewBox="0 0 20 20">
+        <use xlink:href="#right-arrow" class="right-arrow"></use>
+      </svg>
     </section>
 
     <section>
