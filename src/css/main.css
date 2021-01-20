@@ -59,6 +59,8 @@ header{
   padding: 10px 20px;
   flex-wrap: wrap;
   z-index: 4;
+  background-color: white;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, .3);
 }
 
 .search-bar{
@@ -81,7 +83,18 @@ header{
 }
 
 .header-icones{
+  width: 50%;
   order: 2;
+}
+
+.pin-icone{
+  width: 50%;
+  justify-content: center;
+}
+
+.main-icones{
+  width: 50%;
+  justify-content: space-between;
 }
 
 .logo{
@@ -369,14 +382,11 @@ ul{
   }
 
   .main-icones{
-    width: 50%;
     max-width: 100px;
-    justify-content: space-between;
   }
 
   .pin-icone{
     width: 50%;
-    justify-content: center;
   }
   
   .header-icones{
@@ -418,6 +428,13 @@ ul{
 
   /* Header */
 
+  header{
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+  }
+
   .search-bar{
     width: 30%;
     order: 2;
@@ -433,15 +450,6 @@ ul{
 
   .header-icones{
     width: 20%;
-  }
-
-  .main-icones{
-    width: 50%;
-  }
-
-  .pin-icone{
-    width: 50%;
-    justify-content: center;
   }
   
   .header-icones{
@@ -483,6 +491,7 @@ ul{
 }
 
 @media screen and (min-width: 900px){
+
   /* Burger Menu */
 
   .main-menu{
