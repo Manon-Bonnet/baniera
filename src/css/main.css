@@ -23,6 +23,7 @@ https://www.fontsquirrel.com/tools/webfont-generator */
 }
 
 body{
+  --pink : #f08077;
   --light-grey: #f2f2f2;
   --dark-blue: #223440;
   padding: 0;
@@ -51,6 +52,10 @@ body{
   width: 200px;
   font-size: 16px;
   padding: 17px;
+}
+
+a{
+  color: inherit;
 }
 
 /*--------------- HEADER */
@@ -241,14 +246,26 @@ h1{
 
 /*---------------- 2nd section - Baniera intro */
 
-section:nth-child(4){
+section:nth-child(3){
   text-align: center;
   padding: 20px;
 }
 
+section:nth-child(3) p{
+  line-height: 20px;
+  max-width: 700px;
+  max-height: 100px;
+  overflow: hidden;
+  margin: 20px auto;
+}
+
+span{
+  color: var(--pink);
+}
+
 /*---------------- 3rd section - Nav with icones */
 
-section:nth-child(5){
+section:nth-child(4){
   display: none;
 }
 
@@ -414,6 +431,10 @@ ul{
 
   /* Nav icones */
 
+  section:nth-child(3){
+    padding: 50px 20px;
+  }
+
   section:nth-child(5){
     display: none;
   }
@@ -422,8 +443,16 @@ ul{
 
 @media screen and (min-width: 768px){
 
+  body{
+    font-size: 16px;
+  }
+
   .main-button{
     font-size: 20px;
+  }
+
+  h1{
+    font-size: 30px;
   }
 
   /* Header */
@@ -476,16 +505,26 @@ ul{
     justify-content: space-evenly;
   }
 
-  .full-hero-content h1{
-    font-size: 30px;
-  }
-
   .full-hero .main-button{
     margin: 0 auto;
   }
 
   .chapo{
     font-size: 18px;
+  }
+
+  /* 1st section - Baniera description */
+
+  section:nth-child(3) a{
+    display: none;
+  }
+
+  section:nth-child(3) p{
+    max-width: 800px;
+  }
+
+  section:nth-child(3) p{
+    max-height: fit-content;
   }
 
 }
@@ -506,6 +545,12 @@ ul{
 
   .chapo{
     padding: 0 40px;
+  }
+}
+
+@media screen and (min-width:1200px){
+  h1{
+    font-size: 45px;
   }
 }
 
