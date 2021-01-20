@@ -277,6 +277,41 @@ section:nth-child(4){
   display: none;
 }
 
+.second-nav-icone{
+  width: fit-content;
+  height: fit-content;
+  max-width: 6vw;
+  max-height: 8vw;
+}
+
+.second-nav div{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 10%;
+}
+
+.second-nav{
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 20px;
+}
+
+figure{
+  margin: 0;
+}
+
+figcaption{
+  font-size: 14px;
+  text-align: center;
+}
+
+/*---------------- 4th section - Your selection */
+
+section:nth-child(5){
+  padding: 20px;
+}
+
 /*---------------- 5th section - Sur-mesure */
 
 .sur-mesure{
@@ -438,9 +473,9 @@ ul{
     font-size: 16px;
   }
 
-  /* 2nd section - baniera intro */
+  /* 2nd section - 4th */
 
-  section:nth-child(3){
+  section:nth-child(3), section:nth-child(5){
     padding: 50px 20px;
   }
 
@@ -536,6 +571,12 @@ ul{
     max-height: fit-content;
   }
 
+  /*---------------- 3rd section  */
+
+  section:nth-child(4){
+    display: flex;
+  }
+
 }
 
 @media screen and (min-width: 900px){
@@ -554,6 +595,14 @@ ul{
 
   .chapo{
     padding: 0 40px;
+  }
+
+  .second-nav{
+    padding: 0 50px;
+  }
+  
+  figcaption{
+    font-size: 16px;
   }
 }
 
