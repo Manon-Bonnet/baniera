@@ -313,7 +313,8 @@ section:nth-child(5){
 
 .slider{
   width: 100%;
-  overflow: hidden;
+  overflow-x: auto;
+  margin: 20px 0;
 }
 
 .slides{
@@ -322,13 +323,23 @@ section:nth-child(5){
 }
 
 .slides img{
-  height: 200px;
-  width: 40vw;
+  height: 150px;
+  width: 100%;
   object-fit: cover;
 }
 
 .slides article{
-  width: 40vw;
+  width: 35vw;
+  margin-right: 15px;
+}
+
+h2{
+  font-size: 12px;
+  margin: 5px 0;
+}
+
+.slides article p{
+  margin: 0;
 }
 
 /*---------------- 5th section - Sur-mesure */
@@ -380,6 +391,7 @@ section:nth-child(6){
 /*---------------- Votre projet Button */
 
 .votre-projet-btn{
+  z-index: 2;
   position: fixed;
   padding: 0;
   bottom: 0;
