@@ -58,19 +58,26 @@ a{
   color: inherit;
 }
 
+.icones-defined{
+  display: none;
+}
+
 /*--------------- HEADER */
 
 header{
   padding: 10px 20px;
   flex-wrap: wrap;
   z-index: 4;
+  min-height: 50px;
   background-color: white;
   box-shadow: 0 5px 5px rgba(0, 0, 0, .3);
+  align-items: center;
 }
 
 .search-bar{
   width: 100%;
   order: 3;
+  margin: 10px 0 0;
 }
 
 .search-bar label{
@@ -98,6 +105,7 @@ header{
 }
 
 .main-icones{
+  min-width: 100px;
   width: 50%;
   justify-content: space-between;
 }
@@ -388,6 +396,7 @@ ul{
   .search-bar{
     width: 50%;
     order: 2;
+    margin: 0;
   }
 
   .burger-logo{
@@ -429,14 +438,10 @@ ul{
     font-size: 16px;
   }
 
-  /* Nav icones */
+  /* 2nd section - baniera intro */
 
   section:nth-child(3){
     padding: 50px 20px;
-  }
-
-  section:nth-child(5){
-    display: none;
   }
 
 }
@@ -483,6 +488,10 @@ ul{
   
   .header-icones{
     order: 3;
+  }
+
+  .burger-icone{
+    vertical-align: -webkit-baseline-middle;
   }
 
   /* Full hero */
