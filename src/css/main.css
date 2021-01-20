@@ -323,7 +323,7 @@ section:nth-child(5){
 }
 
 .slides img{
-  height: 150px;
+  height: 35vw;
   width: 100%;
   object-fit: cover;
 }
@@ -535,6 +535,19 @@ ul{
     padding: 50px 20px;
   }
 
+  /* slider */
+
+  h2{
+    font-size: 15px;
+  }
+  
+  .slider{
+    overflow-x: hidden;
+    width: 80vw;
+    margin: 20px auto;
+    max-width: 1000px;
+  }
+
 }
 
 @media screen and (min-width: 768px){
@@ -657,6 +670,17 @@ ul{
   .sur-mesure-button{
     left: 10%;
     transform: inherit;
+  }
+
+  .slides article{
+    width: 25vw;
+    max-width: 250px;
+    margin-right: 15px;
+  }
+
+  .slides article img{
+    height: 25vw;
+    max-height: 250px;
   }
 
 }
