@@ -99,8 +99,6 @@ const count = document.querySelector('.slides').children.length;
 let current = 0;
 
 
-
-
 // Listeners
 rightArrow.addEventListener("click", slideToRight);
 leftArrow.addEventListener("click", slideToLeft);
@@ -112,6 +110,8 @@ slides.appendChild(slides.querySelectorAll('article')[1].cloneNode(true));
 slides.appendChild(slides.querySelectorAll('article')[2].cloneNode(true));
 slides.appendChild(slides.querySelectorAll('article')[3].cloneNode(true));
 
+// make sure of the size of the window
+responsiveSlider();
 
 //functions 
 function slideToRight(){
@@ -178,14 +178,16 @@ function responsiveSlider(){
     articles.forEach(article => {
       article.style.marginRight = '23.3px';
       windowWidth = false;
-      moveFactor = 333.3;
+      moveFactor = 1000/3;
+    });
+  } else{
+    slides.style.transform = `translateX(-13vw)`;
+    articles.forEach(article => {
+      article.style.marginRight = '2vw';
+      windowWidth = true;
+      moveFactor = 28;
     });
   }
-  slides.style.transform = `translateX(-13vw)`;
-  articles.forEach(article => {
-    article.style.marginRight = '2vw';
-    windowWidth = true;
-    moveFactor = 28;
-  });
+  
 
 }
