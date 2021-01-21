@@ -90,29 +90,102 @@ function backToBurgerMenu(){
 const rightArrow = document.getElementsByClassName("right-arrow")[0];
 const leftArrow = document.getElementsByClassName("left-arrow")[0];
 const slides = document.getElementsByClassName("slides")[0];
+const slider = document.getElementsByClassName("slider")[0].offsetWidth;
+const articles = document.getElementsByClassName("slides")[0].querySelectorAll('article');
+const slidesLength = slides.querySelectorAll('article').length;
+let canMove = true, windowWidth = true, moveFactor = 28;
 
 const count = document.querySelector('.slides').children.length;
 let current = 0;
 
+
+
+
 // Listeners
 rightArrow.addEventListener("click", slideToRight);
 leftArrow.addEventListener("click", slideToLeft);
+window.onresize =responsiveSlider();
+
+// duplicate the slides
+slides.appendChild(slides.querySelector('article').cloneNode(true));
+slides.appendChild(slides.querySelectorAll('article')[1].cloneNode(true));
+slides.appendChild(slides.querySelectorAll('article')[2].cloneNode(true));
+slides.appendChild(slides.querySelectorAll('article')[3].cloneNode(true));
 
 
-
+//functions 
 function slideToRight(){
   current++;
-  slide();
+  if(canMove && current <= slidesLength){
+    slide(-moveFactor*current, false);
+    if (current === slidesLength) { 
+      setTimeout(function() {
+        current=0;
+        jumpTo(0); 
+      }, 300);
+    } 
+  }
 }
 
 function slideToLeft(){
   current--;
-  slide();
+  if(canMove && current >= -1){
+    if (current === -1) { 
+      jumpTo((-slidesLength)*moveFactor, function() { 
+        current=4;
+        slide(-moveFactor*current, false); 
+      });
+    } else {
+      slide(-moveFactor*current, false);
+    }
+  }
 }
 
-function slide(){
-  const transform = -27 * current;
-  slides.style.transform = `translateX(${transform}vw)`;
-  leftArrow.style.display = current === 0 ? "none" : "block";
-  rightArrow.style.display = current === count - 1 ? "none" : "block";
+function slide(nextPosition, jump){
+  if (!jump) { 
+    canMove = false;
+    setTimeout(function() {
+      canMove = true;
+    }, 300);
+  }
+
+  if(moveFactor == 28){
+    slides.style.transform = `translateX(${nextPosition-13}vw)`;
+  } else{
+    slides.style.transform = `translateX(${nextPosition-155}px)`;
+  }
+}
+
+function jumpTo(newPosition, callback) {
+  window.requestAnimationFrame(function() { 
+    slides.style.transition = 'none'; 
+    slide(newPosition, true);
+
+    window.requestAnimationFrame(function() { 
+      slides.style.transition = 'transform 300ms'; 
+      
+      if (callback) { 
+        callback();
+      }
+    });
+  });
+}
+
+// Adapt margin to slider size
+function responsiveSlider(){
+  if(slider == 1000){
+    slides.style.transform = `translateX(-155px)`;
+    articles.forEach(article => {
+      article.style.marginRight = '23.3px';
+      windowWidth = false;
+      moveFactor = 333.3;
+    });
+  }
+  slides.style.transform = `translateX(-13vw)`;
+  articles.forEach(article => {
+    article.style.marginRight = '2vw';
+    windowWidth = true;
+    moveFactor = 28;
+  });
+
 }
