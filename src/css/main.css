@@ -346,13 +346,13 @@ section:nth-child(5), section:nth-child(7){
 
 .slides img{
   height: 26vw;
-  width: 100%;
   object-fit: cover;
 }
 
 .slides article{
   width: 26vw;
   margin-right: 2vw;
+  overflow: hidden;
 }
 
 h2{
