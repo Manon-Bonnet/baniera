@@ -420,6 +420,20 @@ section:nth-child(6){
   transform: translateX(-50%);
 }
 
+/* Showrooms section */
+
+.showroom-images img{
+  width: 100vw;
+  height: 20vh;
+  object-fit: cover;
+}
+
+.showroom-images{
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
 /*---------------- Votre projet Button */
 
 .votre-projet-btn{
@@ -444,6 +458,7 @@ footer{
   color: white;
   padding: 20px;
   text-align: center;
+  margin-top: 20px;
 }
 
 .footer-main-content, .social-medias, .logo-footer{
@@ -580,6 +595,17 @@ ul{
   
   section:nth-child(5), section:nth-child(7){
     padding: 50px 0;
+  }
+
+  /* showrooms */
+
+  .showroom-images{
+    flex-direction: row;
+  }
+
+  .showroom-images img{
+    width: calc(100%/3);
+    height: 60vh;
   }
 
   /* slider */
@@ -748,6 +774,7 @@ ul{
 
   footer{
     padding: 50px 20px;
+    margin-top: 50px;
   }
   
   .footer-main-content{
