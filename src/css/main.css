@@ -5,16 +5,19 @@ https://www.fontsquirrel.com/tools/webfont-generator */
 @font-face{
   font-family: "barlow-regular";
   src: url("../fonts/Barlow/BarlowSemiCondensed-Regular.ttf");
+  font-display: swap;
 }
 
 @font-face{
   font-family: "barlow-medium";
   src: url("../fonts/Barlow/BarlowSemiCondensed-Medium.ttf");
+  font-display: swap;
 }
 
 @font-face{
   font-family: "quicksand";
   src: url("../fonts/Quicksand/Quicksand-Regular.ttf");
+  font-display: swap;
 }
 
 /*--------------- GENERAL */
@@ -231,7 +234,7 @@ input[type="search"]{
 /*---------------- 1st section - full-hero */
 
 .full-hero{
-  background-image: linear-gradient(rgba(0, 0, 0, .5), transparent 70%, rgba(0, 0, 0, .5)), url("../images/keeping-your-teeth-good-condition.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, .5), transparent 70%, rgba(0, 0, 0, .5)), url("../images/keeping-your-teeth-good-condition-600.jpg");
   background-size: cover;
   background-position-x: 70%;
   height: 60vh;
@@ -379,7 +382,7 @@ section:nth-child(6){
 }
 
 .sect-5-img-group-2{
-  width: 100%;
+  width: 100vw;
   height: 60vh;
 }
 
@@ -547,6 +550,12 @@ ul{
     font-size: 16px;
   }
 
+  /* full hero */
+
+  .full-hero{
+    background-image: url("../images/keeping-your-teeth-good-condition-1000.jpg");
+  }
+
   /* 2nd section - 4th */
 
   section:nth-child(3){
@@ -617,7 +626,6 @@ ul{
 
   .full-hero{
     --full-hero-height: 70vh;
-    background-image: url("../images/keeping-your-teeth-good-condition.jpg");
     height: var(--full-hero-height);
   }
 
@@ -665,6 +673,10 @@ ul{
 
   .sect-5-img-1{
     display: block;
+  }
+
+  .sect-5-img-group-2{
+    width: 100%;
   }
   
   .sect-5-img-group{
@@ -736,6 +748,12 @@ ul{
   
   figcaption{
     font-size: 16px;
+  }
+
+  /* full hero  */
+
+  .full-hero{
+    background-image: url("../images/keeping-your-teeth-good-condition-2000.jpg");
   }
 }
 
