@@ -584,7 +584,7 @@ ul{
   /* full hero */
 
   .full-hero{
-    background-image: url("../images/keeping-your-teeth-good-condition-1000.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, .5), transparent 70%, rgba(0, 0, 0, .5)), url("../images/keeping-your-teeth-good-condition-1000.jpg");
   }
 
   /* 2nd section - 4th */
@@ -675,6 +675,8 @@ ul{
   .full-hero{
     --full-hero-height: 70vh;
     height: var(--full-hero-height);
+    background-image: url("../images/keeping-your-teeth-good-condition-1000.jpg");
+
   }
 
   .full-hero-content{

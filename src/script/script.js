@@ -91,8 +91,9 @@ const allSlides = document.querySelectorAll(".slides");
 const allSliders = document.querySelectorAll(".slider");
 const rightArrows = document.getElementsByClassName("right-arrow");
 const leftArrows = document.getElementsByClassName("left-arrow");
+let articlesClones = [];
 let slides, slider, articles, slidesLength;
-let canMove = true, windowWidth = true, moveFactor = 28;
+let canMove = true, moveFactor = 28;
 let current = 0, previousArrows = [];
 
 
@@ -101,21 +102,8 @@ for(let i = 0; i < rightArrows.length; i++){
   rightArrows[i].addEventListener("click", slideToRight);
   leftArrows[i].addEventListener("click", slideToLeft);
 }
-window.onresize = responsiveSlider;
-
-
-
-if(window.innerWidth >= 768){
-  // duplicate the slides
-  for(let i = 0; i < allSlides.length ; i++){
-    allSlides[i].appendChild(allSlides[i].querySelector('article').cloneNode(true));
-    allSlides[i].appendChild(allSlides[i].querySelectorAll('article')[1].cloneNode(true));
-    allSlides[i].appendChild(allSlides[i].querySelectorAll('article')[2].cloneNode(true));
-    allSlides[i].appendChild(allSlides[i].querySelectorAll('article')[3].cloneNode(true));
-  }
-  responsiveSlider();
-}
-
+window.addEventListener('resize', responsiveSlider);
+responsiveSlider();
 
 //functions 
 function slideToRight(){
@@ -221,29 +209,60 @@ function resetPreviousSlider(arrowTab){
 
 // Adapt margin to slider size
 function responsiveSlider(){
+  current = 0;
+  
+  // suppress clones
+  for(let i = articlesClones.length - 1 ; i >=0 ; i--){
+    console.log(articlesClones[i].parentElement);
+    if(articlesClones.length != 0){
+      articlesClones[i].parentElement.removeChild(articlesClones[i]);
+    }
+  }
+  articlesClones = [];
+
+  //change slider if window size changed
+  for(let i = 0; i < allSliders.length; i++){
+    allSlides[i].style.transform = `translateX(0px)`;
+    allSlides[i].querySelectorAll('article').forEach(article => {
+      article.style.marginRight = '2vw';
+    });
+  }
   if(window.innerWidth >= 768){
+    createClones();
     for(let i = 0; i < allSliders.length; i++){
       if(allSliders[i].offsetWidth == 1000){
         allSlides[i].style.transform = `translateX(-155px)`;
         allSlides[i].querySelectorAll('article').forEach(article => {
           article.style.marginRight = '23.3px';
-          windowWidth = false;
           moveFactor = 1000/3;
         });
       } else{
         allSlides[i].style.transform = `translateX(-13vw)`;
-        allSlides[i].querySelectorAll('article').forEach(article => {
-          article.style.marginRight = '2vw';
-          windowWidth = true;
-          moveFactor = 28;
-        });
+        moveFactor = 28;
       }
     
     }
   }
-  
 
 }
+
+function createClones(){
+  if(window.innerWidth >= 768){
+    // duplicate the slides
+    for(let i = 0; i < allSlides.length ; i++){
+      let one;
+      one = allSlides[i].appendChild(allSlides[i].querySelector('article').cloneNode(true));
+      articlesClones.push(one);
+      one = allSlides[i].appendChild(allSlides[i].querySelectorAll('article')[1].cloneNode(true));
+      articlesClones.push(one);
+      one = allSlides[i].appendChild(allSlides[i].querySelectorAll('article')[2].cloneNode(true));
+      articlesClones.push(one);
+      one = allSlides[i].appendChild(allSlides[i].querySelectorAll('article')[3].cloneNode(true));
+      articlesClones.push(one);
+    }
+  }
+}
+
 
 // Footer see more on mobile versions
 
