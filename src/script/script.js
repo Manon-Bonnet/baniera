@@ -244,3 +244,52 @@ function responsiveSlider(){
   
 
 }
+
+// Footer see more on mobile versions
+
+const pluses = document.getElementsByClassName('plus');
+let seeMoreOn = false, oldMinus, oldPlus;
+
+for(let i = 0; i < pluses.length; i++){
+  pluses[i].addEventListener("click", changeSeeMoreState);
+}
+
+function changeSeeMoreState(){
+  if(seeMoreOn){
+    seeMoreOn = false;
+    if(oldPlus != this){
+      seeMoreOn = true;
+      seeMore(this);
+      seeLess(oldPlus);
+      oldPlus=this;
+    }else{
+      seeLess(this);
+    }
+    oldMinus = this;
+
+  } else{
+    seeMore(this);
+    seeMoreOn = true;
+    oldPlus=this;
+  }
+}
+
+function seeMore(elem){
+  let ul = elem.parentElement.parentElement.querySelector("ul");
+  ul.style.display = "block";
+  turnPlusIntoMinus(elem);
+}
+
+function seeLess(elem){
+  let ul = elem.parentElement.parentElement.querySelector("ul");
+  ul.style.display = "none";
+  turnMinusIntoPlus(elem);
+}
+
+function turnPlusIntoMinus(plus){
+  plus.querySelectorAll("rect")[1].style.display = "none";
+}
+
+function turnMinusIntoPlus(minus){
+  minus.querySelectorAll("rect")[1].style.display = "block"
+}
