@@ -79,6 +79,10 @@ header{
   margin: 10px 0 0;
 }
 
+.search-label{
+  opacity: 0;
+}
+
 .search-bar label{
   position: absolute;
 }
@@ -241,7 +245,7 @@ input[type="search"]{
   margin: auto auto 0;
 }
 
-h1, h4{
+h1, .footer-titles{
   margin: 0;
   font-family: "barlow-medium";
   font-size: 20px;
@@ -447,7 +451,7 @@ footer{
 
 .newsletter-form input, .newsletter-form button{
   height: 55px;
-  background-color: var(--dark-blue);
+  background-color: transparent;
   outline: none;
   border-top: 1px solid var(--light-grey);
   border-bottom: 1px solid var(--light-grey);
