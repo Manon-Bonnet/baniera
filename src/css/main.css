@@ -450,6 +450,10 @@ footer{
   margin-bottom: 30px;
 }
 
+.social-media-2{
+  display: none;
+}
+
 .newsletter-form{
   width: 100%;
   position: relative;
@@ -798,6 +802,18 @@ ul{
 
   .accordion ul{
     display: block;
+  }
+
+  .social-media-2{
+    display: block;
+  }
+
+  .social-media-1{
+    display: none;
+  }
+
+  .newsletter-form{
+    margin-bottom: 20px;
   }
 
 }
