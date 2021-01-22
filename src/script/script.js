@@ -87,34 +87,38 @@ function backToBurgerMenu(){
 /*----------------------------- Slider */
 
 //Get elements 
-const rightArrow = document.getElementsByClassName("right-arrow")[0];
-const leftArrow = document.getElementsByClassName("left-arrow")[0];
-const slides = document.getElementsByClassName("slides")[0];
-const slider = document.getElementsByClassName("slider")[0].offsetWidth;
-const articles = document.getElementsByClassName("slides")[0].querySelectorAll('article');
-const slidesLength = slides.querySelectorAll('article').length;
+const allSlides = document.querySelectorAll(".slides");
+const allSliders = document.querySelectorAll(".slider");
+const rightArrows = document.getElementsByClassName("right-arrow");
+const leftArrows = document.getElementsByClassName("left-arrow");
+let slides, slider, articles, slidesLength;
 let canMove = true, windowWidth = true, moveFactor = 28;
-
-const count = document.querySelector('.slides').children.length;
-let current = 0;
+let current = 0, previousArrows = [];
 
 
 // Listeners
-rightArrow.addEventListener("click", slideToRight);
-leftArrow.addEventListener("click", slideToLeft);
-window.onresize =responsiveSlider();
+for(let i = 0; i < rightArrows.length; i++){
+  rightArrows[i].addEventListener("click", slideToRight);
+  leftArrows[i].addEventListener("click", slideToLeft);
+}
+window.onresize = responsiveSlider;
 
 // duplicate the slides
-slides.appendChild(slides.querySelector('article').cloneNode(true));
-slides.appendChild(slides.querySelectorAll('article')[1].cloneNode(true));
-slides.appendChild(slides.querySelectorAll('article')[2].cloneNode(true));
-slides.appendChild(slides.querySelectorAll('article')[3].cloneNode(true));
+for(let i = 0; i < allSlides.length ; i++){
+  allSlides[i].appendChild(allSlides[i].querySelector('article').cloneNode(true));
+  allSlides[i].appendChild(allSlides[i].querySelectorAll('article')[1].cloneNode(true));
+  allSlides[i].appendChild(allSlides[i].querySelectorAll('article')[2].cloneNode(true));
+  allSlides[i].appendChild(allSlides[i].querySelectorAll('article')[3].cloneNode(true));
+}
 
-// make sure of the size of the window
-responsiveSlider();
+if(window.innerWidth >= 768){
+  responsiveSlider();
+}
+
 
 //functions 
 function slideToRight(){
+  getSlider(this);
   current++;
   if(canMove && current <= slidesLength){
     slide(-moveFactor*current, false);
@@ -128,6 +132,7 @@ function slideToRight(){
 }
 
 function slideToLeft(){
+  getSlider(this);
   current--;
   if(canMove && current >= -1){
     if (current === -1) { 
@@ -148,7 +153,6 @@ function slide(nextPosition, jump){
       canMove = true;
     }, 300);
   }
-
   if(moveFactor == 28){
     slides.style.transform = `translateX(${nextPosition-13}vw)`;
   } else{
@@ -171,23 +175,68 @@ function jumpTo(newPosition, callback) {
   });
 }
 
+function getSlider(elem){
+  getArrow(elem);
+  let sliderSection = elem.parentElement;
+  slider = sliderSection.getElementsByClassName("slider")[0].offsetWidth;
+  slides = sliderSection.getElementsByClassName("slides")[0];
+  articles = slides.querySelectorAll('article');
+  slidesLength = Number((slides.querySelectorAll('article').length) -4);
+}
+
+function getArrow(arrow){
+  let otherArrow;
+  // get the arrows clicked
+  if(arrow.classList.contains("right-arrow")){
+    otherArrow = arrow.parentElement.querySelector('.left-arrow');
+  } else{
+    otherArrow = arrow.parentElement.querySelector('.right-arrow');
+  }
+
+  // check if arrow is on another slider
+  if(current != 0){
+    checkChangedSlider(arrow, otherArrow, previousArrows);
+  }
+
+  // register the arrow clicked for next click to compare
+  previousArrows = [arrow, otherArrow];
+
+}
+
+function checkChangedSlider(arrow1, arrow2, arrowTab){
+  if(arrowTab[0] != arrow1 && arrowTab[0] != arrow2 && arrowTab[1] != arrow1 && arrowTab[1] != arrow2){
+    current = 0;
+  }
+  resetPreviousSlider(arrowTab);
+}
+
+function resetPreviousSlider(arrowTab){
+  if(arrowTab[0].parentElement.querySelector(".slides").length == 1000){
+    arrowTab[0].parentElement.querySelector(".slides").style.transform = `translateX(-155px)`;
+  } else{
+    arrowTab[0].parentElement.querySelector(".slides").style.transform = `translateX(-13vw)`;
+  }
+}
+
 // Adapt margin to slider size
 function responsiveSlider(){
-  if(slider == 1000){
-    slides.style.transform = `translateX(-155px)`;
-    articles.forEach(article => {
-      article.style.marginRight = '23.3px';
-      windowWidth = false;
-      moveFactor = 1000/3;
-    });
-  } else{
-    slides.style.transform = `translateX(-13vw)`;
-    articles.forEach(article => {
-      article.style.marginRight = '2vw';
-      windowWidth = true;
-      moveFactor = 28;
-    });
-  }
+  for(let i = 0; i < allSliders.length; i++){
+    if(allSliders[i].offsetWidth == 1000){
+      allSlides[i].style.transform = `translateX(-155px)`;
+      allSlides[i].querySelectorAll('article').forEach(article => {
+        article.style.marginRight = '23.3px';
+        windowWidth = false;
+        moveFactor = 1000/3;
+      });
+    } else{
+      allSlides[i].style.transform = `translateX(-13vw)`;
+      allSlides[i].querySelectorAll('article').forEach(article => {
+        article.style.marginRight = '2vw';
+        windowWidth = true;
+        moveFactor = 28;
+      });
+    }
   
+  }
 
 }
