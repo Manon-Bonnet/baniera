@@ -336,6 +336,7 @@ section:nth-child(5), section:nth-child(7){
   overflow-x: auto;
   margin: 20px 10px;
   -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 .slider::-webkit-scrollbar {
