@@ -308,7 +308,7 @@ figcaption{
 
 /*---------------- 4th section - Your selection */
 
-section:nth-child(5){
+section:nth-child(5), section:nth-child(7){
   padding: 20px 0;
   flex-wrap: wrap;
   justify-content: center;
@@ -549,7 +549,7 @@ ul{
     padding: 50px 20px;
   }
   
-  section:nth-child(5){
+  section:nth-child(5), section:nth-child(7){
     padding: 50px 0;
   }
 
