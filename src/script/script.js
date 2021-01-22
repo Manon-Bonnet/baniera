@@ -103,15 +103,16 @@ for(let i = 0; i < rightArrows.length; i++){
 }
 window.onresize = responsiveSlider;
 
-// duplicate the slides
-for(let i = 0; i < allSlides.length ; i++){
-  allSlides[i].appendChild(allSlides[i].querySelector('article').cloneNode(true));
-  allSlides[i].appendChild(allSlides[i].querySelectorAll('article')[1].cloneNode(true));
-  allSlides[i].appendChild(allSlides[i].querySelectorAll('article')[2].cloneNode(true));
-  allSlides[i].appendChild(allSlides[i].querySelectorAll('article')[3].cloneNode(true));
-}
+
 
 if(window.innerWidth >= 768){
+  // duplicate the slides
+  for(let i = 0; i < allSlides.length ; i++){
+    allSlides[i].appendChild(allSlides[i].querySelector('article').cloneNode(true));
+    allSlides[i].appendChild(allSlides[i].querySelectorAll('article')[1].cloneNode(true));
+    allSlides[i].appendChild(allSlides[i].querySelectorAll('article')[2].cloneNode(true));
+    allSlides[i].appendChild(allSlides[i].querySelectorAll('article')[3].cloneNode(true));
+  }
   responsiveSlider();
 }
 
@@ -220,23 +221,26 @@ function resetPreviousSlider(arrowTab){
 
 // Adapt margin to slider size
 function responsiveSlider(){
-  for(let i = 0; i < allSliders.length; i++){
-    if(allSliders[i].offsetWidth == 1000){
-      allSlides[i].style.transform = `translateX(-155px)`;
-      allSlides[i].querySelectorAll('article').forEach(article => {
-        article.style.marginRight = '23.3px';
-        windowWidth = false;
-        moveFactor = 1000/3;
-      });
-    } else{
-      allSlides[i].style.transform = `translateX(-13vw)`;
-      allSlides[i].querySelectorAll('article').forEach(article => {
-        article.style.marginRight = '2vw';
-        windowWidth = true;
-        moveFactor = 28;
-      });
+  if(window.innerWidth >= 768){
+    for(let i = 0; i < allSliders.length; i++){
+      if(allSliders[i].offsetWidth == 1000){
+        allSlides[i].style.transform = `translateX(-155px)`;
+        allSlides[i].querySelectorAll('article').forEach(article => {
+          article.style.marginRight = '23.3px';
+          windowWidth = false;
+          moveFactor = 1000/3;
+        });
+      } else{
+        allSlides[i].style.transform = `translateX(-13vw)`;
+        allSlides[i].querySelectorAll('article').forEach(article => {
+          article.style.marginRight = '2vw';
+          windowWidth = true;
+          moveFactor = 28;
+        });
+      }
+    
     }
-  
   }
+  
 
 }
