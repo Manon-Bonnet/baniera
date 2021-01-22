@@ -74,6 +74,10 @@ a{
   display: none;
 }
 
+.max-width{
+  width: 100%;
+}
+
 /*--------------- HEADER */
 
 header{
@@ -102,7 +106,6 @@ header{
 
 .search-bar input{
   width: 90%;
-  height: 32px;
 }
 
 .search-bar button{
@@ -419,7 +422,6 @@ section:nth-child(6){
 /* Showrooms section */
 
 .showroom-images img{
-  width: 100vw;
   height: 20vh;
   object-fit: cover;
 }
@@ -482,7 +484,6 @@ footer{
 }
 
 .newsletter-form input, .newsletter-form button{
-  height: 55px;
   background-color: transparent;
   outline: none;
   border-top: 1px solid var(--light-grey);
@@ -861,6 +862,7 @@ ul{
 
   .chapo{
     padding: 0 40px;
+    margin: 0 0 auto 0;
   }
 
   .second-nav{
