@@ -3,20 +3,28 @@
 /* récupérer les fonts dans font squirel les formats woff c'est mieux ! 
 https://www.fontsquirrel.com/tools/webfont-generator */
 @font-face{
-  font-family: "barlow-regular";
-  src: url("../fonts/Barlow/BarlowSemiCondensed-Regular.ttf");
+  font-family: "barlow";
+  src: url("../fonts/Barlow/barlowsemicondensed-regular-webfont.woff") format('woff'),
+  url("../fonts/Barlow/barlowsemicondensed-regular-webfont.woff2") format('woff2'),
+  url("../fonts/Barlow/BarlowSemiCondensed-Regular.ttf") format('truetype');
+  font-weight: normal;
   font-display: swap;
 }
 
 @font-face{
-  font-family: "barlow-medium";
-  src: url("../fonts/Barlow/BarlowSemiCondensed-Medium.ttf");
+  font-family: "barlow";
+  src: url("../fonts/Barlow/barlowsemicondensed-medium-webfont.woff") format('woff'),
+  url("../fonts/Barlow/barlowsemicondensed-medium-webfont.woff2") format('woff2'),
+  url("../fonts/Barlow/BarlowSemiCondensed-Medium.ttf") format('truetype');
+  font-weight: bold;
   font-display: swap;
 }
 
 @font-face{
   font-family: "quicksand";
-  src: url("../fonts/Quicksand/Quicksand-Regular.ttf");
+  src: url("../fonts/Quicksand/Quicksand_Book.otf") format("opentype"),
+  url("../fonts/Quicksand/quicksand_book-webfont.woff") format("woff"),
+  url('../fonts/Quicksand/quicksand_book-webfont.woff2') format("woff2");
   font-display: swap;
 }
 
@@ -51,7 +59,8 @@ body{
 .main-button{
   background-color: #f08077;
   color: white;
-  font-family: "barlow-regular";
+  font-family: "barlow";
+  font-weight: normal;
   font-size: 16px;
   padding: 17px;
 }
@@ -118,7 +127,8 @@ header{
 
 .logo{
   margin: 0;
-  font-family: "barlow-regular";
+  font-family: "barlow";
+  font-weight: normal;
   margin-left: 10px;
 }
 
@@ -250,7 +260,8 @@ input[type="search"]{
 
 h1, .footer-titles{
   margin: 0;
-  font-family: "barlow-medium";
+  font-family: "barlow";
+  font-weight: bold;
   font-size: 20px;
 }
 
@@ -420,7 +431,8 @@ section:nth-child(6){
   border: 0;
   background-color: var(--dark-blue);
   color: white;
-  font-family: "barlow-regular";
+  font-family: "barlow";
+  font-weight: normal;
   font-size: 16px;
   height: 65px;
 }
