@@ -290,11 +290,7 @@ span{
   color: var(--pink);
 }
 
-/*---------------- 3rd section - Nav with icones */
-
-section:nth-child(4){
-  display: none;
-}
+/*----------------  Nav with icones */
 
 .second-nav-icone{
   width: fit-content;
@@ -305,9 +301,9 @@ section:nth-child(4){
 
 .second-nav{
   justify-content: space-between;
-  width: 100%;
   padding: 0 20px;
   align-items: flex-start;
+  display: none;
 }
 
 figure{
@@ -718,7 +714,7 @@ ul{
 
   /*---------------- 3rd section  */
 
-  section:nth-child(4){
+  .second-nav{
     display: flex;
   }
 
