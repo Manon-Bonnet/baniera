@@ -212,8 +212,8 @@ function responsiveSlider(){
   current = 0;
   
   // suppress clones
-  for(let i = articlesClones.length - 1 ; i >=0 ; i--){
-    if(articlesClones.length != 0){
+  for (let i = articlesClones.length - 1; i >= 0; i--) {
+    if (articlesClones.length != 0) {
       articlesClones[i].parentElement.removeChild(articlesClones[i]);
     }
   }

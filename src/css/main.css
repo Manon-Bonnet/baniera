@@ -1,13 +1,12 @@
 /*--------------- FONTS */
 
-/* récupérer les fonts dans font squirel les formats woff c'est mieux ! 
-https://www.fontsquirrel.com/tools/webfont-generator */
 @font-face{
   font-family: "barlow";
   src: url("../fonts/Barlow/barlowsemicondensed-regular-webfont.woff") format('woff'),
   url("../fonts/Barlow/barlowsemicondensed-regular-webfont.woff2") format('woff2'),
   url("../fonts/Barlow/BarlowSemiCondensed-Regular.ttf") format('truetype');
   font-weight: normal;
+  font-style: normal;
   font-display: swap;
 }
 
@@ -17,6 +16,7 @@ https://www.fontsquirrel.com/tools/webfont-generator */
   url("../fonts/Barlow/barlowsemicondensed-medium-webfont.woff2") format('woff2'),
   url("../fonts/Barlow/BarlowSemiCondensed-Medium.ttf") format('truetype');
   font-weight: bold;
+  font-style: normal;
   font-display: swap;
 }
 
@@ -27,6 +27,21 @@ https://www.fontsquirrel.com/tools/webfont-generator */
   url('../fonts/Quicksand/quicksand_book-webfont.woff2') format("woff2");
   font-display: swap;
 }
+
+/*---------------- Keyframes */
+
+@keyframes menuappearance{
+  100%{
+    left: 0;
+  }
+}
+
+@keyframes menudisappearance{
+  100%{
+    left: -100vw;
+  }
+}
+
 
 /*--------------- GENERAL */
 *{
@@ -884,23 +899,5 @@ ul{
 @media screen and (min-width:1200px){
   h1{
     font-size: 45px;
-  }
-}
-
-@keyframes menuappearance{
-  0%{
-    left: -100vw;
-  }
-  100%{
-    left: 0;
-  }
-}
-
-@keyframes menudisappearance{
-  0%{
-    left: 0;
-  }
-  100%{
-    left: -100vw;
   }
 }
