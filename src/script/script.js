@@ -250,13 +250,13 @@ function createClones(){
     // duplicate the slides
     for(let i = 0; i < allSlides.length ; i++){
       let one;
-      one = allSlides[i].appendChild(allSlides[i].querySelector('article').cloneNode(true));
+      one = allSlides[i].appendChild(allSlides[i].querySelector('a').cloneNode(true));
       articlesClones.push(one);
-      one = allSlides[i].appendChild(allSlides[i].querySelectorAll('article')[1].cloneNode(true));
+      one = allSlides[i].appendChild(allSlides[i].querySelectorAll('a')[1].cloneNode(true));
       articlesClones.push(one);
-      one = allSlides[i].appendChild(allSlides[i].querySelectorAll('article')[2].cloneNode(true));
+      one = allSlides[i].appendChild(allSlides[i].querySelectorAll('a')[2].cloneNode(true));
       articlesClones.push(one);
-      one = allSlides[i].appendChild(allSlides[i].querySelectorAll('article')[3].cloneNode(true));
+      one = allSlides[i].appendChild(allSlides[i].querySelectorAll('a')[3].cloneNode(true));
       articlesClones.push(one);
     }
   }
