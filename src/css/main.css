@@ -250,6 +250,10 @@ input[type="search"]{
   text-align: center;
 }
 
+.second-menu li{
+  margin-top: 10px;
+}
+
 .open-second-menu ~ ul{
   animation: menuappearance 1s;
   animation-fill-mode: forwards;
@@ -617,6 +621,14 @@ ul{
 
   .second-menu{
     width: 50%;
+  }
+
+  .second-menu-title{
+    margin-top: 10px;
+  }
+
+  .second-menu-title:hover{
+    cursor: pointer;
   }
 
   /* Votre projet button */
