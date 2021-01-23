@@ -130,6 +130,7 @@ header{
 
 .search-bar input{
   width: 90%;
+  outline: 0;
 }
 
 .search-bar button{
@@ -513,7 +514,17 @@ footer{
   position: absolute;
   color: var(--light-grey);
   left: 10px;
-  top: 20px
+  top: 20px;
+  z-index: 1;
+}
+
+.newsletter-form input:focus ~ label, .newsletter-form input:active ~ label, .newsletter-form input:valid ~ label{
+  font-size: 12px;
+  top: -6px;
+  background-color: var(--dark-blue);
+  padding: 0 5px;
+  transition: top 0.3s;
+  z-index: 3;
 }
 
 .newsletter-form input, .newsletter-form button{
@@ -527,6 +538,10 @@ footer{
   width: 90%;
   border-left: 1px solid var(--light-grey);
   border-right: 0;
+  position: relative;
+  z-index: 2;
+  color: white;
+  padding: 10px;
 }
 
 .newsletter-form button{
